@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar System</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-title">Petrus Johannes Maas</div>
+        <ul class="navbar-links">
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-      <div class="tools">
-        <img src="./img/tools.png" alt="" />
-      </div>
-      <div class="mevn"></div>
-      <div class="python"></div>
-      <div class="solidity"></div>
+        <div class="tools" data-name="Tools">
+          <a href="tools.html">
+              <img src="./img/tools.png" alt="Tools">
+          </a>
+        </div>
+    
+        <div class="mevn" data-name="MEVN">
+            <a href="mevn.html"></a>
+        </div>
+        <div class="python" data-name="Python">
+            <a href="python.html"></a>
+        </div>
+        <div class="solidity" data-name="Solidity">
+            <a href="solidity.html"></a>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <img src="./img/profile.jpg" alt="Thumbnail">
+        <p>Click on the planets to explore projects built in different languages. The center represents tools I've used.</p>
     </div>
     <script src="./script.js"></script>
-  </body>
+</body>
 </html>
