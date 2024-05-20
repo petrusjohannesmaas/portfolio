@@ -34,3 +34,10 @@ img{
     animation: orbit 50s linear infinite;
 }
 
+.star{
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 50%;
+    z-index: -1;
+
+}
