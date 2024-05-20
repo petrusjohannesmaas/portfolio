@@ -8,11 +8,14 @@ body {
     overflow: hidden;
 }
 
-container{
-    font-size: 6px;
-    width: 40em;
-    height: 40em;
+.container{
+    font-size: 15px;
+    width: 50em;
+    height: 50em;
     position: relative;
+    align-items: center;
+    margin-left: 125px;
+    margin-top: 100px;
 }
 
 img{
@@ -34,10 +37,84 @@ img{
     animation: orbit 50s linear infinite;
 }
 
+.mevn, .python, .solidity{
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+.mevn{
+    top: 12.5em;
+    left: 12.5em;
+    width: 15em;
+    height: 15em;
+    animation: orbit 28.7s linear infinite;
+}
+
+.python{
+    top: 6em;
+    left: 6em;
+    width: 28em;
+    height: 28em;
+    animation: orbit 36.5s linear infinite;
+}
+
+.solidity{
+    top: 5em;
+    left: 5em;
+    width: 35em;
+    height: 35em;
+    animation: orbit 19s linear infinite;
+}
+
+.mevn::before, .python::before, .solidity::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 50s linear infinite;
+}
+
+.mevn::before{
+    top: 1.5em;
+    right: 0.8em;
+    width: 2em;
+    height: 2em;
+    background-image:url(./img/mevn.png);
+    background-size: cover;
+}
+
+.python::before{
+    top: 2em;
+    right: 2em;
+    width: 2em;
+    height: 2em;
+    background-image:url(./img/python.png);
+    background-size: cover;
+}
+
+
+.solidity::before{
+    top: 3em;
+    right: 0em;
+    width: 5em;
+    height: 5em;
+    background-image:url(./img/solidity.png);
+    background-size: cover;
+}
+
+
 .star{
     position: absolute;
     background-color: aliceblue;
     border-radius: 50%;
     z-index: -1;
+}
 
+@keyframes orbit{
+    to{
+        transform: rotate(360deg);
+    }
+    
 }
