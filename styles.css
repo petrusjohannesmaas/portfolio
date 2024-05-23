@@ -168,3 +168,75 @@ body {
 .info-card p {
     margin: 0;
 }
+
+/*Resume Styling*/
+body {
+    background-color: #f8f9fa;
+    color: #007bff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .name {
+    font-size: 2em;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  
+  .title {
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    position: relative;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+  h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    margin-top: 5px;
+    animation: grow 1s ease-in-out;
+  }
+  
+  @keyframes grow {
+    from {
+      width: 0;
+    }
+    to {
+      width: 50px;
+    }
+  }
+  
+  .skills .list-inline-item {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
