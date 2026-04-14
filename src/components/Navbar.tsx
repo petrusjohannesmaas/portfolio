@@ -78,17 +78,6 @@ export default function Navbar() {
           >
             <i className="fa-brands fa-github" style={{ fontSize: '18px' }}></i>
           </a>
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-md text-[#475569] hover:text-[#1d6bf3] hover:bg-[#e8f0fe] transition-all dark:text-slate-300 dark:hover:bg-slate-800"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? (
-              <i className="fa-solid fa-sun" style={{ fontSize: '18px' }}></i>
-            ) : (
-              <i className="fa-solid fa-moon" style={{ fontSize: '18px' }}></i>
-            )}
-          </button>
           <a
             href="https://linkedin.com/"
             target="_blank"
@@ -107,7 +96,50 @@ export default function Navbar() {
             <i className="fa-solid fa-calendar-days" style={{ fontSize: '15px' }}></i>
             Book a call
           </a>
+          {/* Theme toggle pill — far right on desktop */}
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            aria-label="Toggle theme"
+            className="ml-2 flex items-center gap-0.5 rounded-full px-1 py-1 transition-all duration-300 bg-white border border-slate-200 shadow-sm dark:bg-[#0d1f3c] dark:border-slate-700"
+          >
+            <span
+              className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
+                theme === 'light' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+              }`}
+            >
+              <i className="fa-solid fa-sun" style={{ fontSize: '13px' }}></i>
+            </span>
+            <span
+              className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
+                theme === 'dark' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+              }`}
+            >
+              <i className="fa-solid fa-moon" style={{ fontSize: '13px' }}></i>
+            </span>
+          </button>
         </div>
+
+        {/* Mobile: toggle pill between brand and hamburger */}
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          aria-label="Toggle theme"
+          className="md:hidden flex items-center gap-0.5 rounded-full px-1 py-1 transition-all duration-300 bg-white border border-slate-200 shadow-sm dark:bg-[#0d1f3c] dark:border-slate-700"
+        >
+          <span
+            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
+              theme === 'light' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+            }`}
+          >
+            <i className="fa-solid fa-sun" style={{ fontSize: '13px' }}></i>
+          </span>
+          <span
+            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
+              theme === 'dark' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+            }`}
+          >
+            <i className="fa-solid fa-moon" style={{ fontSize: '13px' }}></i>
+          </span>
+        </button>
 
         {/* Hamburger (mobile) */}
         <button
@@ -139,17 +171,6 @@ export default function Navbar() {
             <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-[#475569] dark:text-slate-300">
               <i className="fa-brands fa-github" style={{ fontSize: '20px' }}></i>
             </a>
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="text-[#475569] dark:text-slate-300"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <i className="fa-solid fa-sun" style={{ fontSize: '20px' }}></i>
-              ) : (
-                <i className="fa-solid fa-moon" style={{ fontSize: '20px' }}></i>
-              )}
-            </button>
             <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-[#475569] dark:text-slate-300">
               <i className="fa-brands fa-linkedin" style={{ fontSize: '20px' }}></i>
             </a>
