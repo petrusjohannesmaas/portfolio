@@ -1,13 +1,9 @@
-
 interface Project {
   title: string;
   description: string;
   tags: string[];
-  github: string;
-  live?: string;
-  stars: number;
-  forks: number;
-  accent: string;
+  link: string;
+  image: string;
 }
 
 const PROJECTS: Project[] = [
@@ -16,31 +12,24 @@ const PROJECTS: Project[] = [
     description:
       'A self-hosted home-lab orchestration tool. Automates provisioning, monitoring, and management of Docker-based services on a local server — with a clean web dashboard.',
     tags: ['Python', 'Docker', 'FastAPI', 'React', 'SQLite'],
-    github: 'https://github.com/',
-    stars: 42,
-    forks: 8,
-    accent: '#1d6bf3',
+    link: '#',
+    image: '/project_1.png',
   },
   {
     title: 'AutoScript',
     description:
       'A collection of Bash and Python automation scripts for common sysadmin tasks: backups, log rotation, user provisioning, health checks, and alerting via webhook.',
     tags: ['Bash', 'Python', 'Linux', 'Cron', 'Webhooks'],
-    github: 'https://github.com/',
-    stars: 28,
-    forks: 5,
-    accent: '#0ea5e9',
+    link: '#',
+    image: '/project_2.png',
   },
   {
     title: 'AIDesk',
     description:
       'An AI-powered helpdesk assistant that integrates with an existing ticketing system. Uses RAG over internal documentation to provide instant, contextual answers.',
     tags: ['Python', 'LangChain', 'OpenAI', 'PostgreSQL', 'pgvector'],
-    github: 'https://github.com/',
-    live: 'https://example.com',
-    stars: 67,
-    forks: 12,
-    accent: '#6366f1',
+    link: '#',
+    image: '/project_3.png',
   },
 ];
 
@@ -48,8 +37,9 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-[#f8fafc] dark:bg-[#0d1f3c]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
-        <div className="mb-14">
+        <div id="projects-heading" className="mb-16">
           <p className="text-xs font-bold uppercase tracking-widest text-[#1d6bf3] mb-2">
             What I've Built
           </p>
@@ -61,87 +51,66 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((p) => (
-            <article
-              key={p.title}
-              className="flex flex-col bg-white dark:bg-[#0a1628] border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
-            >
-              {/* Accent bar */}
+        {/* Project rows */}
+        <div className="flex flex-col gap-32">
+          {PROJECTS.map((p, i) => {
+            const isEven = i % 2 === 1;
+            return (
               <div
-                className="h-1.5 w-full"
-                style={{ background: p.accent }}
-              />
-
-              <div className="flex flex-col flex-1 p-6">
-                <h3 className="font-['Montserrat'] font-bold text-xl text-[#0a1628] dark:text-white mb-3 group-hover:text-[#1d6bf3] transition-colors">
-                  {p.title}
-                </h3>
-
-                <p className="text-sm text-[#475569] dark:text-slate-400 leading-relaxed mb-5 flex-1">
-                  {p.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {p.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-[#e8f0fe] text-[#1d6bf3] text-xs font-semibold px-2.5 py-1 rounded-lg"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                key={p.title}
+                className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 lg:gap-16 items-center`}
+              >
+                {/* Screenshot */}
+                <div className="w-full lg:w-1/2 shrink-0">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700 group">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-[#1d6bf3] z-10" />
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute inset-0 bg-[#1d6bf3]/0 group-hover:bg-[#1d6bf3]/5 transition-colors duration-500" />
+                  </div>
                 </div>
 
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-                  <div className="flex items-center gap-3 text-xs text-[#94a3b8]">
-                    <span className="flex items-center gap-1">
-                      <i className="fa-solid fa-star" style={{ fontSize: '13px' }}></i> {p.stars}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <i className="fa-solid fa-code-fork" style={{ fontSize: '13px' }}></i> {p.forks}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1.5 rounded-lg text-[#475569] hover:text-[#1d6bf3] hover:bg-[#e8f0fe] transition-all"
-                      aria-label="View on GitHub"
-                    >
-                      <i className="fa-brands fa-github" style={{ fontSize: '17px' }}></i>
-                    </a>
-                    {p.live && (
-                      <a
-                        href={p.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-1.5 rounded-lg text-[#475569] hover:text-[#1d6bf3] hover:bg-[#e8f0fe] transition-all"
-                        aria-label="View live demo"
+                {/* Text content */}
+                <div className="w-full lg:w-1/2">
+                  <h3 className="font-['Montserrat'] font-extrabold text-3xl sm:text-4xl text-[#0a1628] dark:text-white mb-4 leading-tight">
+                    {p.title}
+                  </h3>
+
+                  <p className="text-[#475569] dark:text-slate-400 text-base leading-relaxed mb-7">
+                    {p.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {p.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-[#e8f0fe] text-[#1d6bf3] text-xs font-bold px-3 py-1.5 rounded-lg"
                       >
-                        <i className="fa-solid fa-up-right-from-square" style={{ fontSize: '17px' }}></i>
-                      </a>
-                    )}
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+
+                  {/* CTA */}
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2.5 bg-[#1d6bf3] hover:bg-[#1558d6] text-white font-bold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98]"
+                  >
+                    <i className="fa-solid fa-up-right-from-square" style={{ fontSize: '14px' }}></i>
+                    VIEW PROJECT
+                  </a>
                 </div>
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="mt-10 text-center">
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 border-2 border-slate-200 dark:border-slate-700 text-[#0a1628] dark:text-white font-semibold px-6 py-3 rounded-xl hover:border-[#1d6bf3] transition-colors"
-          >
-            <i className="fa-brands fa-github" style={{ fontSize: '18px' }}></i> View all on GitHub
-          </a>
-        </div>
       </div>
     </section>
   );
