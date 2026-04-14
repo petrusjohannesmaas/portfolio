@@ -7,6 +7,7 @@ interface Job {
   type: string;
   summary: string;
   achievements: string[];
+  logo: string;
 }
 
 const JOBS: Job[] = [
@@ -24,6 +25,7 @@ const JOBS: Job[] = [
       'Integrated OpenAI-powered chatbots and document-processing pipelines for business workflow automation.',
       'Provided ongoing IT support, network setup, and security hardening for small businesses.',
     ],
+    logo: '/logo-1.png',
   },
   {
     company: 'Tech Solutions KZN',
@@ -39,6 +41,7 @@ const JOBS: Job[] = [
       'Scripted automated backup and monitoring routines in Bash and PowerShell, saving 8 hours/week.',
       'Led the migration of on-premise file shares to a hybrid cloud solution.',
     ],
+    logo: '/logo-2.png',
   },
   {
     company: 'Web & Automation Side Projects',
@@ -53,6 +56,7 @@ const JOBS: Job[] = [
       'Developed web scrapers and data pipelines for personal analytics projects.',
       'Contributed to open-source repositories in the Python ecosystem.',
     ],
+    logo: '/logo-3.png',
   },
 ];
 
@@ -90,15 +94,15 @@ export default function Experience() {
                 <div className="hidden md:block absolute left-1/2 top-8 w-4 h-4 rounded-full bg-[#1d6bf3] border-4 border-white dark:border-[#0a1628] -translate-x-1/2 z-10" />
 
                 {/* Company card */}
-                <div className={`bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-6 ${i % 2 !== 0 ? 'md:text-right' : ''}`}>
-                  <div className="w-16 h-16 rounded-xl bg-slate-200 dark:bg-slate-700 mb-4 flex items-center justify-center text-2xl font-bold text-[#1d6bf3]">
-                    {job.company[0]}
+                <div className="bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-6">
+                  <div className="w-16 h-16 rounded-xl bg-white dark:bg-slate-800 mb-4 flex items-center justify-center border border-slate-100 dark:border-slate-700 overflow-hidden">
+                    <img src={job.logo} alt={job.company} className="w-10 h-10 object-contain" />
                   </div>
                   <h3 className="font-['Montserrat'] font-bold text-lg text-[#0a1628] dark:text-white mb-1">
                     {job.company}
                   </h3>
                   <p className="text-[#1d6bf3] font-semibold text-sm mb-3">{job.role}</p>
-                  <div className={`flex flex-wrap gap-2 text-xs text-[#94a3b8] ${i % 2 !== 0 ? 'md:justify-end' : ''}`}>
+                  <div className="flex flex-wrap gap-2 text-xs text-[#94a3b8]">
                     <span className="flex items-center gap-1">
                       <i className="fa-solid fa-location-dot" style={{ fontSize: '12px' }}></i> {job.location}
                     </span>
