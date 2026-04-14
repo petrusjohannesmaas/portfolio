@@ -39,8 +39,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-sm shadow-sm dark:bg-[#0a1628]/95'
-          : 'bg-transparent'
+        ? 'bg-white/95 backdrop-blur-sm shadow-sm dark:bg-[#0a1628]/95'
+        : 'bg-transparent'
         }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -49,7 +49,7 @@ export default function Navbar() {
           href="#home"
           className="font-['Montserrat'] font-extrabold text-xl tracking-tight text-[#0a1628] dark:text-white"
         >
-          PJ<span className="text-[#1d6bf3]">.</span>
+          PJ<span className="text-[#1d6bf3]"> MAAS</span>
         </a>
 
         {/* Desktop links */}
@@ -102,16 +102,14 @@ export default function Navbar() {
             className="ml-2 flex items-center gap-0.5 rounded-full px-1 py-1 transition-all duration-300 bg-white border border-slate-200 shadow-sm dark:bg-[#0d1f3c] dark:border-slate-700"
           >
             <span
-              className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
-                theme === 'light' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
-              }`}
+              className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${theme === 'light' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+                }`}
             >
               <i className="fa-solid fa-sun" style={{ fontSize: '13px' }}></i>
             </span>
             <span
-              className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
-                theme === 'dark' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
-              }`}
+              className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+                }`}
             >
               <i className="fa-solid fa-moon" style={{ fontSize: '13px' }}></i>
             </span>
@@ -125,16 +123,14 @@ export default function Navbar() {
           className="md:hidden flex items-center gap-0.5 rounded-full px-1 py-1 transition-all duration-300 bg-white border border-slate-200 shadow-sm dark:bg-[#0d1f3c] dark:border-slate-700"
         >
           <span
-            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
-              theme === 'light' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
-            }`}
+            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${theme === 'light' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+              }`}
           >
             <i className="fa-solid fa-sun" style={{ fontSize: '13px' }}></i>
           </span>
           <span
-            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${
-              theme === 'dark' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
-            }`}
+            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-300 ${theme === 'dark' ? 'bg-[#1d6bf3] text-white' : 'text-slate-400'
+              }`}
           >
             <i className="fa-solid fa-moon" style={{ fontSize: '13px' }}></i>
           </span>

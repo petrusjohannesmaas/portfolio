@@ -3,100 +3,74 @@ interface SkillCategory {
   title: string;
   icon: React.ReactNode;
   skills: string[];
-}
-
-interface Tech {
-  name: string;
-  icon: string;
-}
-
-interface StackCategory {
-  title: string;
-  techs: Tech[];
+  techIcons: string[];
 }
 
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Web Development',
-    icon: <i className="fa-solid fa-globe" style={{ fontSize: '22px' }}></i>,
+    icon: <i className="fa-solid fa-globe" style={{ fontSize: '20px' }}></i>,
     skills: ['React', 'TypeScript', 'Next.js', 'HTML & CSS', 'Tailwind CSS', 'REST APIs', 'GraphQL'],
+    techIcons: [
+      'devicon-html5-plain colored',
+      'devicon-css3-plain colored',
+      'devicon-react-original colored',
+      'devicon-nextjs-plain',
+      'devicon-typescript-plain colored',
+      'devicon-tailwindcss-plain colored',
+    ],
   },
   {
     title: 'Back-End Development',
-    icon: <i className="fa-solid fa-server" style={{ fontSize: '22px' }}></i>,
+    icon: <i className="fa-solid fa-server" style={{ fontSize: '20px' }}></i>,
     skills: ['Node.js', 'Python', 'FastAPI', 'Express', 'PostgreSQL', 'MongoDB', 'Redis'],
+    techIcons: [
+      'devicon-nodejs-plain colored',
+      'devicon-python-plain colored',
+      'devicon-fastapi-plain colored',
+      'devicon-express-original',
+      'devicon-postgresql-plain colored',
+    ],
   },
   {
     title: 'DevOps & Cloud',
-    icon: <i className="fa-solid fa-cloud" style={{ fontSize: '22px' }}></i>,
+    icon: <i className="fa-solid fa-cloud" style={{ fontSize: '20px' }}></i>,
     skills: ['Docker', 'CI/CD Pipelines', 'GitHub Actions', 'AWS', 'Cloudflare', 'Linux Server Admin', 'Nginx'],
+    techIcons: [
+      'devicon-docker-plain colored',
+      'devicon-githubactions-plain colored',
+      'devicon-linux-plain',
+      'devicon-bash-plain',
+      'devicon-nginx-original colored',
+    ],
   },
   {
     title: 'Automation & Scripting',
-    icon: <i className="fa-solid fa-terminal" style={{ fontSize: '22px' }}></i>,
+    icon: <i className="fa-solid fa-terminal" style={{ fontSize: '20px' }}></i>,
     skills: ['Bash Scripting', 'Python Automation', 'Cron Jobs', 'Ansible', 'Web Scraping', 'Task Scheduling'],
+    techIcons: [
+      'devicon-bash-plain',
+      'devicon-python-plain colored',
+      'devicon-ansible-plain colored',
+      'devicon-selenium-original colored',
+      'devicon-nodejs-plain', // n8n placeholder
+    ],
   },
   {
     title: 'SysAdmin',
-    icon: <i className="fa-solid fa-gear" style={{ fontSize: '22px' }}></i>,
+    icon: <i className="fa-solid fa-gear" style={{ fontSize: '20px' }}></i>,
     skills: ['Linux (Debian/Ubuntu)', 'Windows Server', 'Active Directory', 'Networking', 'Firewalls', 'Backups & Recovery'],
+    techIcons: ['devicon-linux-plain'],
   },
   {
     title: 'AI Integrations',
-    icon: <i className="fa-solid fa-robot" style={{ fontSize: '22px' }}></i>,
+    icon: <i className="fa-solid fa-robot" style={{ fontSize: '20px' }}></i>,
     skills: ['OpenAI API', 'LangChain', 'RAG Pipelines', 'Vector Databases', 'Prompt Engineering', 'AI Workflow Automation'],
-  },
-];
-
-const STACK_CATEGORIES: StackCategory[] = [
-  {
-    title: 'Programming Languages',
-    techs: [
-      { name: 'Python', icon: 'devicon-python-plain colored' },
-      { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
-      { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
-      { name: 'Bash', icon: 'devicon-bash-plain' },
-      { name: 'SQL', icon: 'devicon-azuresqldatabase-plain colored' },
-    ],
-  },
-  {
-    title: 'Web Fundamentals',
-    techs: [
-      { name: 'HTML5', icon: 'devicon-html5-plain colored' },
-      { name: 'CSS3', icon: 'devicon-css3-plain colored' },
-      { name: 'Tailwind', icon: 'devicon-tailwindcss-plain colored' },
-      { name: 'REST APIs', icon: 'devicon-fastapi-plain colored' },
-    ],
-  },
-  {
-    title: 'Frameworks',
-    techs: [
-      { name: 'React', icon: 'devicon-react-original colored' },
-      { name: 'Next.js', icon: 'devicon-nextjs-plain' },
-      { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
-      { name: 'FastAPI', icon: 'devicon-fastapi-plain colored' },
-      { name: 'Express', icon: 'devicon-express-original' },
-    ],
-  },
-  {
-    title: 'Automation',
-    techs: [
-      { name: 'Ansible', icon: 'devicon-ansible-plain colored' },
-      { name: 'GitHub Actions', icon: 'devicon-githubactions-plain colored' },
-      { name: 'Docker', icon: 'devicon-docker-plain colored' },
-      { name: 'n8n', icon: 'devicon-nodejs-plain' },
-      { name: 'Selenium', icon: 'devicon-selenium-original colored' },
-    ],
-  },
-  {
-    title: 'Development Tools',
-    techs: [
-      { name: 'Git', icon: 'devicon-git-plain colored' },
-      { name: 'GitHub', icon: 'devicon-github-original' },
-      { name: 'VS Code', icon: 'devicon-vscode-plain colored' },
-      { name: 'Linux', icon: 'devicon-linux-plain' },
-      { name: 'Nginx', icon: 'devicon-nginx-original colored' },
-      { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+    techIcons: [
+      'devicon-python-plain colored',
+      'devicon-nodejs-plain colored',
+      'devicon-postgresql-plain colored',
+      'devicon-nodejs-plain', // n8n placeholder
     ],
   },
 ];
@@ -117,74 +91,50 @@ export default function Skills() {
           </p>
         </div>
 
-        {/* Two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-10">
+        {/* 3-column grid for better balance */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SKILL_CATEGORIES.map((cat) => (
+            <div
+              key={cat.title}
+              className="group flex flex-col bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-6 hover:border-[#1d6bf3] transition-all duration-300"
+            >
+              {/* Category Header */}
+              <div className="flex items-center gap-3.5 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-[#e8f0fe] text-[#1d6bf3] flex items-center justify-center group-hover:bg-[#1d6bf3] group-hover:text-white transition-colors">
+                  {cat.icon}
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-[#0a1628] dark:text-white text-sm">
+                  {cat.title}
+                </h3>
+              </div>
 
-          {/* LEFT — Skills */}
-          <div>
-            <h3 className="font-['Montserrat'] font-bold text-sm uppercase tracking-wider text-[#0a1628] dark:text-white mb-5">
-              Core Skills
-            </h3>
-            <div className="flex flex-col gap-4">
-              {SKILL_CATEGORIES.map((cat) => (
-                <div
-                  key={cat.title}
-                  className="group bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-5 hover:border-[#1d6bf3] transition-colors"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-9 h-9 rounded-xl bg-[#e8f0fe] text-[#1d6bf3] flex items-center justify-center group-hover:bg-[#1d6bf3] group-hover:text-white transition-colors text-sm">
-                      {cat.icon}
+              {/* Skills Tags */}
+              <div className="flex flex-wrap gap-2 mb-8 flex-1">
+                {cat.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-white dark:bg-[#0a1628] border border-slate-200 dark:border-slate-700 text-[#475569] dark:text-slate-300 text-[11px] font-medium px-2.5 py-1 rounded-lg"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              {/* Tech Footer */}
+              <div className="pt-5 border-t border-slate-200/60 dark:border-slate-800/60">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8] mb-3">
+                  Technologies
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {cat.techIcons.map((icon, idx) => (
+                    <div key={idx} className="group/icon">
+                      <i className={`${icon} text-xl opacity-70 hover:opacity-100 transition-opacity`} />
                     </div>
-                    <h4 className="font-['Montserrat'] font-bold text-[#0a1628] dark:text-white text-sm">
-                      {cat.title}
-                    </h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="bg-white dark:bg-[#0a1628] border border-slate-200 dark:border-slate-700 text-[#475569] dark:text-slate-300 text-xs font-medium px-2.5 py-1 rounded-lg"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-
-          {/* RIGHT — Tech Stack */}
-          <div>
-            <h3 className="font-['Montserrat'] font-bold text-sm uppercase tracking-wider text-[#0a1628] dark:text-white mb-5">
-              Tech Stack
-            </h3>
-            <div className="flex flex-col gap-4">
-              {STACK_CATEGORIES.map((cat) => (
-                <div
-                  key={cat.title}
-                  className="bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-5"
-                >
-                  <h4 className="font-['Montserrat'] font-bold text-[#0a1628] dark:text-white mb-4 text-sm">
-                    {cat.title}
-                  </h4>
-                  <div className="flex flex-wrap gap-4">
-                    {cat.techs.map((tech) => (
-                      <div key={tech.name} className="flex flex-col items-center gap-1.5 group">
-                        <div className="w-11 h-11 rounded-xl bg-white dark:bg-[#0a1628] border border-slate-100 dark:border-slate-800 flex items-center justify-center group-hover:border-[#1d6bf3] transition-colors">
-                          <i className={`${tech.icon} text-2xl`} />
-                        </div>
-                        <span className="text-[10px] font-medium text-[#94a3b8] group-hover:text-[#1d6bf3] transition-colors text-center">
-                          {tech.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>
