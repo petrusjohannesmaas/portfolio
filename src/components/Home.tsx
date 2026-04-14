@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import CursorGlow from './CursorGlow';
 
 const TITLES = ['IT Specialist', 'Full-Stack Developer'];
 
@@ -44,6 +45,7 @@ export default function Home() {
       id="home"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white dark:bg-[#0a1628]"
     >
+      <CursorGlow />
       {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06]"
@@ -59,6 +61,21 @@ export default function Home() {
       <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-[#4f8ef7] opacity-5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Image */}
+          <div className="flex justify-center lg:justify-start fade-up">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full border-4 border-[#1d6bf3] p-1.5 shadow-2xl overflow-hidden bg-white dark:bg-[#0a1628] group">
+              <div className="absolute inset-0 bg-[#1d6bf3]/10 group-hover:bg-transparent transition-colors duration-500" />
+              <img
+                src="/pfp.jpg"
+                alt="Petrus J. Maas"
+                className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+
+          {/* Right: Content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
         {/* Location badge */}
         <div className="inline-flex items-center gap-2 bg-[#e8f0fe] text-[#1d6bf3] text-xs font-semibold px-3 py-1.5 rounded-full mb-8 fade-up">
           <span className="w-2 h-2 rounded-full bg-[#1d6bf3] animate-pulse" />
@@ -135,6 +152,8 @@ export default function Home() {
           </a>
         </div>
       </div>
+    </div>
+  </div>
 
       {/* Scroll indicator */}
       <a
