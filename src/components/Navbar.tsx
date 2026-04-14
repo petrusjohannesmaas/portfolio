@@ -13,6 +13,21 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -63,6 +78,17 @@ export default function Navbar() {
           >
             <i className="fa-brands fa-github" style={{ fontSize: '18px' }}></i>
           </a>
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="p-2 rounded-md text-[#475569] hover:text-[#1d6bf3] hover:bg-[#e8f0fe] transition-all dark:text-slate-300 dark:hover:bg-slate-800"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <i className="fa-solid fa-sun" style={{ fontSize: '18px' }}></i>
+            ) : (
+              <i className="fa-solid fa-moon" style={{ fontSize: '18px' }}></i>
+            )}
+          </button>
           <a
             href="https://linkedin.com/"
             target="_blank"
@@ -113,6 +139,17 @@ export default function Navbar() {
             <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-[#475569] dark:text-slate-300">
               <i className="fa-brands fa-github" style={{ fontSize: '20px' }}></i>
             </a>
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-[#475569] dark:text-slate-300"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <i className="fa-solid fa-sun" style={{ fontSize: '20px' }}></i>
+              ) : (
+                <i className="fa-solid fa-moon" style={{ fontSize: '20px' }}></i>
+              )}
+            </button>
             <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-[#475569] dark:text-slate-300">
               <i className="fa-brands fa-linkedin" style={{ fontSize: '20px' }}></i>
             </a>

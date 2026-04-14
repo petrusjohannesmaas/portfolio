@@ -3,6 +3,9 @@
 
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --navy: #0a1628;
@@ -35,7 +38,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .dark body {
+  html.dark body {
     background-color: var(--navy);
     color: var(--white);
   }
