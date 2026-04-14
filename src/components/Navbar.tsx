@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -43,7 +42,7 @@ export default function Navbar() {
         : 'bg-transparent'
         }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <nav className="w-full px-6 lg:px-12 flex items-center justify-between h-16">
         {/* Brand */}
         <a
           href="#home"
@@ -66,36 +65,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Social icons (desktop) */}
+        {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-2">
           <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="p-2 rounded-md text-[#475569] hover:text-[#1d6bf3] hover:bg-[#e8f0fe] transition-all dark:text-slate-300"
-            aria-label="GitHub"
+            href="#contact"
+            className="flex items-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-[#1558d6] transition-colors"
           >
-            <i className="fa-brands fa-github" style={{ fontSize: '18px' }}></i>
+            <i className="fa-solid fa-paper-plane" style={{ fontSize: '13px' }}></i>
+            Contact
           </a>
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="p-2 rounded-md text-[#475569] hover:text-[#1d6bf3] hover:bg-[#e8f0fe] transition-all dark:text-slate-300"
-            aria-label="LinkedIn"
-          >
-            <i className="fa-brands fa-linkedin" style={{ fontSize: '18px' }}></i>
-          </a>
-          <a
-            href="https://calendly.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="ml-1 flex items-center gap-1.5 bg-[#1d6bf3] text-white text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-[#1558d6] transition-colors"
-          >
-            <i className="fa-solid fa-calendar-days" style={{ fontSize: '15px' }}></i>
-            Book a call
-          </a>
-          {/* Theme toggle pill — far right on desktop */}
+          {/* Theme toggle pill */}
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             aria-label="Toggle theme"
@@ -116,7 +95,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile: toggle pill between brand and hamburger */}
+        {/* Mobile: toggle pill */}
         <button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           aria-label="Toggle theme"
@@ -162,20 +141,14 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="flex gap-3 px-3">
-            <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-[#475569] dark:text-slate-300">
-              <i className="fa-brands fa-github" style={{ fontSize: '20px' }}></i>
-            </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-[#475569] dark:text-slate-300">
-              <i className="fa-brands fa-linkedin" style={{ fontSize: '20px' }}></i>
-            </a>
+          <div className="px-3">
             <a
-              href="https://calendly.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 bg-[#1d6bf3] text-white text-sm font-medium px-3 py-1 rounded-lg"
+              href="#contact"
+              onClick={close}
+              className="flex items-center justify-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-3 py-2.5 rounded-lg active:bg-[#1558d6] transition-colors"
             >
-              <i className="fa-solid fa-calendar-days" style={{ fontSize: '14px' }}></i> Book a call
+              <i className="fa-solid fa-paper-plane" style={{ fontSize: '14px' }}></i>
+              Contact
             </a>
           </div>
         </div>
