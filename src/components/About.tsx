@@ -1,22 +1,47 @@
 
 const CERTS = [
-  { name: 'CompTIA A+', issuer: 'CompTIA', year: '2023' },
-  { name: 'Google IT Support Professional', issuer: 'Google / Coursera', year: '2022' },
-  { name: 'AWS Cloud Practitioner', issuer: 'Amazon Web Services', year: '2024' },
+  {
+    name: 'Blockchain Specialization',
+    issuer: 'University at Buffalo',
+    year: '2024',
+    logo: '/university_at_buffalo_logo.ico',
+    link: 'https://coursera.org/share/8c68df70807921da333312f8c318fc15'
+  },
+  {
+    name: 'Programming With JavaScript',
+    issuer: 'Meta',
+    year: '2022',
+    logo: '/meta_logo.ico',
+    link: 'https://www.coursera.org/account/accomplishments/verify/U0RZ745WPSU4'
+  },
+  {
+    name: 'Innovation Through Design',
+    issuer: 'University of Sydney',
+    year: '2023',
+    logo: '/university_of_sydney.ico',
+    link: 'https://coursera.org/share/2f9aed491063bafbf7c7b561be2558d3'
+  },
+  {
+    name: 'HTML, CSS and JavaScript for Web Developers',
+    issuer: 'John Hopkins University',
+    year: '2024',
+    logo: '/john_hopkins_logo.ico',
+    link: 'https://coursera.org/share/2e666cf3ce8c37ed25facffd8558977f'
+  }
 ];
 
-const INTERESTS = ['Chess', 'Hiking', 'Open Source', 'Astronomy', 'Cooking', 'Photography'];
+const INTERESTS = ['Chess', 'Linux', 'Fashion', 'Formula 1', 'Vintage Music'];
 
 const LANGUAGES = [
   { lang: 'Afrikaans', level: 'Native' },
-  { lang: 'English',   level: 'Fluent' },
+  { lang: 'English', level: 'Fluent' },
 ];
 
 export default function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-[#f8fafc] dark:bg-[#0d1f3c]"
+      className="py-24 bg-[#f1f5f9] dark:bg-[#0d1f3c]"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
@@ -41,18 +66,36 @@ export default function About() {
 
             <p className="text-[#475569] dark:text-slate-400 leading-relaxed mb-4">
               I'm a passionate IT professional and full-stack developer based in KwaZulu-Natal, South Africa.
-              My work spans web development, system administration, infrastructure, and AI integrations — I
+              My work spans web development, Linux system administration, infrastructure, and automation - I
               love bridging the gap between technical complexity and practical business solutions.
             </p>
             <p className="text-[#475569] dark:text-slate-400 leading-relaxed mb-4">
-              With a background in both hands-on sysadmin work and modern software development, I bring
-              a holistic perspective to every project: I care as much about uptime and security as I do
+              With a background in both hands-on sysadmin work, blockchain technologies and modern software development using AI tools, I bring
+              a practical perspective to every project: I care as much about uptime and security as I do
               about clean code and great UX.
             </p>
             <p className="text-[#475569] dark:text-slate-400 leading-relaxed">
-              I'm always exploring the latest in automation, AI tooling, and cloud infrastructure —
-              and I believe the best solutions are the ones that quietly just work.
+              I'm familiar with CI/CD processes and latest development technologies with a proven record of well documented projects. Explore my blog, or download my CV if you want to learn more.
             </p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <a
+                href="https://petrusjohannesmaas.github.io/research-lab/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-[#1d6bf3] hover:bg-[#1558d6] text-white font-bold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98]"
+              >
+                <i className="fa-solid fa-rss"></i>
+                Read My Blog
+              </a>
+              <a
+                href="/PJ%20Maas%20CV%20(2026).pdf"
+                target="_blank"
+                className="inline-flex items-center gap-2 border-2 border-[#1d6bf3] text-[#1d6bf3] hover:bg-[#1d6bf3] hover:text-white font-bold px-6 py-3 rounded-xl transition-all active:scale-[0.98]"
+              >
+                <i className="fa-solid fa-file-pdf"></i>
+                Download CV
+              </a>
+            </div>
           </div>
 
           {/* Right: quick facts (2 cols) */}
@@ -66,11 +109,28 @@ export default function About() {
               </div>
               <ul className="flex flex-col gap-3">
                 {CERTS.map((c) => (
-                  <li key={c.name} className="flex items-start gap-3">
-                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#1d6bf3] shrink-0" />
-                    <div>
-                      <p className="text-sm font-semibold text-[#0a1628] dark:text-white">{c.name}</p>
-                      <p className="text-xs text-[#94a3b8]">{c.issuer} · {c.year}</p>
+                  <li key={c.name} className="flex items-start gap-3 group">
+                    <img
+                      src={c.logo}
+                      alt={c.issuer}
+                      className="w-6 h-6 mt-1 object-contain transition-all"
+                    />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-sm font-semibold text-[#0a1628] dark:text-white">{c.name}</p>
+                        <a
+                          href={c.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[#94a3b8] hover:text-[#1d6bf3] transition-colors"
+                          title="View Certificate"
+                        >
+                          <i className="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                      </div>
+                      <p className="text-xs text-[#64748b] dark:text-slate-400 font-medium">
+                        {c.issuer} <span className="text-[#94a3b8] font-normal mx-1">·</span> {c.year}
+                      </p>
                     </div>
                   </li>
                 ))}

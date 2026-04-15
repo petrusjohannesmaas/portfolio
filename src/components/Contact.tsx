@@ -43,7 +43,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#f8fafc] dark:bg-[#0d1f3c]">
+    <section id="contact" className="py-24 bg-[#f1f5f9] dark:bg-[#0d1f3c]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
@@ -80,7 +80,7 @@ export default function Contact() {
                   <Wrapper
                     key={card.label}
                     {...wrapperProps}
-                    className="group flex flex-col gap-3 bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-5 hover:border-[#1d6bf3] hover:shadow-sm transition-all cursor-default"
+                    className="group flex flex-col gap-3 bg-white dark:bg-[#0d1f3c] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-[#1d6bf3] hover:shadow-md transition-all cursor-default"
                   >
                     <div className="w-9 h-9 rounded-xl bg-[#e8f0fe] flex items-center justify-center shrink-0 group-hover:bg-[#1d6bf3] transition-colors">
                       <i
