@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Skills', href: '#skills' },
 ];
 
 export default function Navbar() {
@@ -71,8 +71,8 @@ export default function Navbar() {
             href="#contact"
             className="flex items-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-[#1558d6] transition-colors"
           >
-            <i className="fa-solid fa-paper-plane" style={{ fontSize: '13px' }}></i>
-            Contact
+            <i className="fa-brands fa-square-upwork" style={{ fontSize: '13px' }}></i>
+            Proposals
           </a>
           {/* Theme toggle pill */}
           <button
@@ -147,8 +147,8 @@ export default function Navbar() {
               onClick={close}
               className="flex items-center justify-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-3 py-2.5 rounded-lg active:bg-[#1558d6] transition-colors"
             >
-              <i className="fa-solid fa-paper-plane" style={{ fontSize: '14px' }}></i>
-              Contact
+              <i className="fa-solid fa-upwork" style={{ fontSize: '14px' }}></i>
+              Request
             </a>
           </div>
         </div>

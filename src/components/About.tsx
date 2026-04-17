@@ -10,7 +10,7 @@ const CERTS = [
   {
     name: 'Programming With JavaScript',
     issuer: 'Meta',
-    year: '2022',
+    year: '2023',
     logo: '/meta_logo.ico',
     link: 'https://www.coursera.org/account/accomplishments/verify/U0RZ745WPSU4'
   },
@@ -30,7 +30,7 @@ const CERTS = [
   }
 ];
 
-const INTERESTS = ['Chess', 'Linux', 'Fashion', 'Formula 1', 'Vintage Music'];
+const INTERESTS = ['Formula 1', 'Linux', 'Fashion', 'World Music', 'Chess', 'Blockchain', 'Philosophy'];
 
 const LANGUAGES = [
   { lang: 'Afrikaans', level: 'Native' },
@@ -60,7 +60,7 @@ export default function About() {
                 <i className="fa-solid fa-briefcase text-[#1d6bf3]" style={{ fontSize: '20px' }}></i>
               </div>
               <span className="font-['Montserrat'] font-bold text-lg text-[#0a1628] dark:text-white">
-                IT Specialist & Developer
+                Freelance IT Specialist
               </span>
             </div>
 

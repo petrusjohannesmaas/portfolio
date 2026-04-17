@@ -13,75 +13,73 @@ interface Job {
 
 const JOBS: Job[] = [
   {
-    company: 'Freelance / Self-Employed',
-    role: 'IT Consultant & Full-Stack Developer',
-    period: 'Jan 2022 – Present',
-    location: 'KwaZulu-Natal, SA',
-    type: 'Remote',
-    summary:
-      'Independent consulting across web development, infrastructure, and AI automation for local and international clients.',
-    achievements: [
-      'Delivered full-stack web applications for SME clients using React, Node.js, and PostgreSQL.',
-      'Designed and maintained self-hosted infrastructure, reducing client cloud costs by up to 40%.',
-      'Integrated OpenAI-powered chatbots and document-processing pipelines for business workflow automation.',
-      'Provided ongoing IT support, network setup, and security hardening for small businesses.',
-    ],
-    logo: '/logo-1.png',
-    accent: '#1d6bf3',
-    icon: 'fa-solid fa-laptop-code',
-  },
-  {
-    company: 'Tech Solutions KZN',
-    role: 'IT Support Specialist',
-    period: 'Jun 2020 – Dec 2021',
-    location: 'Pietermaritzburg, SA',
+    company: 'Megs',
+    role: 'Junior IT Technician',
+    period: '2024 – 2025',
+    location: 'Midrand, Gauteng',
     type: 'On-site',
     summary:
-      'End-user support, server administration, and internal tooling for a regional managed services provider.',
+      'My first IT role where I learned about Linux through lab projects and sharpened full-stack and network troubleshooting skills at an Internet Service Provider (ISP).',
     achievements: [
-      'Handled Tier 1–2 support tickets, achieving consistent 95%+ resolution rates within SLA.',
-      'Managed Windows Server environments, Active Directory, and Group Policy for 200+ users.',
-      'Scripted automated backup and monitoring routines in Bash and PowerShell, saving 8 hours/week.',
-      'Led the migration of on-premise file shares to a hybrid cloud solution.',
-    ],
-    logo: '/logo-2.png',
-    accent: '#0ea5e9',
-    icon: 'fa-solid fa-headset',
-  },
-  {
-    company: 'Web & Automation Side Projects',
-    role: 'Developer (Personal)',
-    period: '2018 – 2020',
-    location: 'Remote',
-    type: 'Personal',
-    summary:
-      'Built and maintained personal projects to sharpen full-stack and automation skills before transitioning into professional roles.',
-    achievements: [
+      'Developed data pipelines for brute force detection on client routers using Python & PostgreSQL reducing false positives by 90%',
+      'Delivered full-stack Inventory Management System with RBAC using HTML, CSS, JavaScript and MariaDB.',
       'Built a home-lab Kubernetes cluster to experiment with container orchestration and self-hosting.',
-      'Developed web scrapers and data pipelines for personal analytics projects.',
-      'Contributed to open-source repositories in the Python ecosystem.',
     ],
-    logo: '/logo-3.png',
-    accent: '#6366f1',
+    logo: '/megs_logo.png',
+    accent: '#ca1919ff',
     icon: 'fa-solid fa-flask',
   },
   {
-    company: 'Digital Agency ZA',
-    role: 'Junior Web Developer',
-    period: '2017 – 2018',
-    location: 'Durban, SA',
+    company: 'Connect50',
+    role: 'Automations Specialist',
+    period: 'Nov 2025 – Feb 2026',
+    location: 'Remote',
+    type: 'Contract',
+    summary:
+      'Contracted to research AI products and provision HighLevel CRM, I initiated the automation of legacy pipelines for a marketing agency serving 50+ industries - before launching their mass-marketing campaign.',
+    achievements: [
+      'Configured HighLevel CRM, initial pipelines, workflows, automations and contacts.',
+      'Led a team in automating client onboarding workflows, reducing onboarding time and manual tasks.',
+      'Created appointment-driven sales funnels integrated with Zoom and Google Calendar.',
+    ],
+    logo: '/logo-2.png',
+    accent: '#6366f1',
+    icon: 'fa-solid fa-headset',
+  },
+  {
+    company: 'ZAsync',
+    role: 'Technical Cofounder',
+    period: '2024 – Present',
+    location: 'Pretoria, Gauteng',
     type: 'Hybrid',
     summary:
-      'Front-end development and CMS integration for a boutique digital agency serving hospitality and e-commerce clients.',
+      'Co-founded a tech startup in the blockchain space, taking the lead on infrastructure, automation, and DevOps practices to support business growth.',
     achievements: [
-      'Built and maintained responsive landing pages and marketing sites using HTML, CSS, and JavaScript.',
-      'Collaborated with designers to implement pixel-perfect UI components from Figma mockups.',
-      'Integrated WordPress and Shopify themes for client storefronts, improving page load times by 30%.',
-      'Assisted with SEO audits and Google Analytics reporting for client campaigns.',
+      'Provisioned Linux infrastructure (On-premise and Cloud) for critical business applications and services with Proxmox.',
+      'Actively managing Ethereum validators using Distributed Validator Technology (DVT) in datacenter on Hoodi Testnet.',
+      'Deployed centralized monitoring and logging stack, enabling proactive detection of performance and availability issues.',
+      'Automated routine maintenance with shell scripting, reducing manual administrative effort by 35%',
     ],
-    logo: '/logo-4.png',
-    accent: '#f59e0b',
+    logo: '/zasync_logo.png',
+    accent: '#0b84f5ff',
     icon: 'fa-solid fa-code',
+  },
+  {
+    company: 'Skottelfire',
+    role: 'Automation Specialist & Developer',
+    period: 'Feb 2026 – Present',
+    location: 'KwaZulu-Natal, SA',
+    type: 'Remote',
+    summary:
+      'Independent consulting across web development, infrastructure, and marketing automation for local small business that needed a digital presence.',
+    achievements: [
+      'Delivered modern sales funnels using React, MailerLite and Cloudflare Workers.',
+      'Designed and maintained back-end infrastructure, reducing client cloud costs by up to 60%.',
+      'Provided domain setup, ongoing IT support, and social media management.',
+    ],
+    logo: '/skottelfire_logo.png',
+    accent: '#f59e0b',
+    icon: 'fa-solid fa-laptop-code',
   },
 ];
 
@@ -177,7 +175,7 @@ export default function Experience() {
             Experience
           </h2>
           <p className="mt-3 text-[#475569] dark:text-slate-400 max-w-xl">
-            From helpdesk to full-stack and AI integrations — a hands-on path through the IT world.
+            Automating operations for <strong>SMEs</strong> and developing full-stack solutions.
           </p>
         </div>
 

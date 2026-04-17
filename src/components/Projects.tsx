@@ -8,28 +8,28 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: 'HomeLabOS',
+    title: 'AI-OS',
     description:
-      'A self-hosted home-lab orchestration tool. Automates provisioning, monitoring, and management of Docker-based services on a local server — with a clean web dashboard.',
-    tags: ['Python', 'Docker', 'FastAPI', 'React', 'SQLite'],
+      'Test build of an Ubuntu-based Linux distribution featuring a custom AI productivity suite, focussed on developers (and AI enthusiasts). Built with Flutter / Dart, it leverages RAG for instant, contextual assistance and persistent memory.',
+    tags: ['Dart', 'Flutter', 'Gemma', 'SQLite-vector'],
     link: '#',
-    image: '/project_1.png',
+    image: '/project_3.jpeg',
   },
   {
-    title: 'AutoScript',
+    title: 'Bietjie Magrietjie',
     description:
-      'A collection of Bash and Python automation scripts for common sysadmin tasks: backups, log rotation, user provisioning, health checks, and alerting via webhook.',
-    tags: ['Bash', 'Python', 'Linux', 'Cron', 'Webhooks'],
-    link: '#',
+      'A full-stack React e-commerce platform built for an author that includes a blog, sales funnels, lead capturing, marketing automations and database (KV) deployed on Cloudflare.',
+    tags: ['React', 'TypeScript', 'Cloudflare', 'Tailwind CSS', 'n8n'],
+    link: 'https://bietjie-magrietjie.pages.dev',
     image: '/project_2.png',
   },
   {
-    title: 'AIDesk',
+    title: 'Prompt Vault',
     description:
-      'An AI-powered helpdesk assistant that integrates with an existing ticketing system. Uses RAG over internal documentation to provide instant, contextual answers.',
-    tags: ['Python', 'LangChain', 'OpenAI', 'PostgreSQL', 'pgvector'],
+      'A full-stack Flutter application with authentication for building, optimizing and managing AI project prompts. Fully deployed on Firebase hosting',
+    tags: ['Flutter', 'Dart', 'Firebase'],
     link: '#',
-    image: '/project_3.png',
+    image: '/project_1.png',
   },
 ];
 

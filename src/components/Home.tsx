@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CursorGlow from './CursorGlow';
 
-const TITLES = ['IT Specialist', 'Full-Stack Developer'];
+const TITLES = ['Freelance IT Specialist', 'AI-Enabled Developer', 'Automation Engineer'];
 
 function useTypingEffect(words: string[], typingSpeed = 80, deleteSpeed = 45, pause = 1800) {
   const [displayed, setDisplayed] = useState('');
@@ -76,84 +76,84 @@ export default function Home() {
 
           {/* Right: Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-        {/* Location badge */}
-        <div className="inline-flex items-center gap-2 bg-[#e8f0fe] text-[#1d6bf3] text-xs font-semibold px-3 py-1.5 rounded-full mb-8 fade-up">
-          <span className="w-2 h-2 rounded-full bg-[#1d6bf3] animate-pulse" />
-          KwaZulu-Natal, South Africa
-        </div>
+            {/* Location badge */}
+            <div className="inline-flex items-center gap-2 bg-[#e8f0fe] text-[#1d6bf3] text-xs font-semibold px-3 py-1.5 rounded-full mb-8 fade-up">
+              <span className="w-2 h-2 rounded-full bg-[#1d6bf3] animate-pulse" />
+              KwaZulu-Natal, South Africa
+            </div>
 
-        {/* Name */}
-        <h1
-          className="font-['Montserrat'] font-extrabold text-5xl sm:text-7xl lg:text-8xl text-[#0a1628] dark:text-white leading-none tracking-tight mb-4 fade-up"
-          style={{ animationDelay: '0.1s' }}
-        >
-          Petrus J.<br />
-          <span className="text-[#1d6bf3]">Maas</span>
-        </h1>
+            {/* Name */}
+            <h1
+              className="font-['Montserrat'] font-extrabold text-5xl sm:text-7xl lg:text-8xl text-[#0a1628] dark:text-white leading-none tracking-tight mb-4 fade-up"
+              style={{ animationDelay: '0.1s' }}
+            >
+              Petrus J.<br />
+              <span className="text-[#1d6bf3]">Maas</span>
+            </h1>
 
-        {/* Typing subtitle */}
-        <p
-          className="font-['Montserrat'] text-2xl sm:text-3xl text-[#475569] dark:text-slate-300 mb-6 h-10 fade-up"
-          style={{ animationDelay: '0.2s' }}
-        >
-          {typed}
-          <span className="cursor-blink" />
-        </p>
+            {/* Typing subtitle */}
+            <p
+              className="font-['Montserrat'] text-2xl sm:text-3xl text-[#475569] dark:text-slate-300 mb-6 h-10 fade-up"
+              style={{ animationDelay: '0.2s' }}
+            >
+              {typed}
+              <span className="cursor-blink" />
+            </p>
 
-        {/* Short bio */}
-        <p
-          className="max-w-xl text-[#475569] dark:text-slate-400 text-lg leading-relaxed mb-10 fade-up"
-          style={{ animationDelay: '0.3s' }}
-        >
-          Building robust web applications, automating workflows, and integrating
-          AI solutions. Based in KZN, working globally.
-        </p>
+            {/* Short bio */}
+            <p
+              className="max-w-xl text-[#475569] dark:text-slate-400 text-lg leading-relaxed mb-10 fade-up"
+              style={{ animationDelay: '0.3s' }}
+            >
+              Building robust web applications, automating workflows, and integrating
+              AI solutions. Based in KZN, working globally.
+            </p>
 
-        {/* CTAs */}
-        <div
-          className="flex flex-wrap gap-4 mb-12 fade-up"
-          style={{ animationDelay: '0.4s' }}
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-[#1d6bf3] hover:bg-[#1558d6] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-          >
-            Get in Touch
-          </a>
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 border-2 border-[#e2e8f0] hover:border-[#1d6bf3] text-[#0a1628] dark:text-white dark:border-slate-700 font-semibold px-6 py-3 rounded-xl transition-colors"
-          >
-            View Projects
-          </a>
-        </div>
+            {/* CTAs */}
+            <div
+              className="flex flex-wrap gap-4 mb-12 fade-up"
+              style={{ animationDelay: '0.4s' }}
+            >
+              <a
+                href="#experience"
+                className="inline-flex items-center gap-2 bg-[#1d6bf3] hover:bg-[#1558d6] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+              >
+                My Experience
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 border-2 border-[#e2e8f0] hover:border-[#1d6bf3] text-[#0a1628] dark:text-white dark:border-slate-700 font-semibold px-6 py-3 rounded-xl transition-colors"
+              >
+                View Projects
+              </a>
+            </div>
 
-        {/* Social links */}
-        <div
-          className="flex items-center gap-4 fade-up"
-          style={{ animationDelay: '0.5s' }}
-        >
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-sm text-[#475569] hover:text-[#1d6bf3] dark:text-slate-400 transition-colors"
-          >
-            <i className="fa-brands fa-github" style={{ fontSize: '18px' }}></i> GitHub
-          </a>
-          <span className="w-px h-4 bg-slate-300" />
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-sm text-[#475569] hover:text-[#1d6bf3] dark:text-slate-400 transition-colors"
-          >
-            <i className="fa-brands fa-linkedin" style={{ fontSize: '18px' }}></i> LinkedIn
-          </a>
+            {/* Social links */}
+            <div
+              className="flex items-center gap-4 fade-up"
+              style={{ animationDelay: '0.5s' }}
+            >
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm text-[#475569] hover:text-[#1d6bf3] dark:text-slate-400 transition-colors"
+              >
+                <i className="fa-brands fa-github" style={{ fontSize: '18px' }}></i> GitHub
+              </a>
+              <span className="w-px h-4 bg-slate-300" />
+              <a
+                href="https://www.upwork.com/freelancers/~0115123195757e4159"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm text-[#475569] hover:text-[#1d6bf3] dark:text-slate-400 transition-colors"
+              >
+                <i className="fa-brands fa-square-upwork" style={{ fontSize: '18px' }}></i> upwork
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
       {/* Scroll indicator */}
       <a

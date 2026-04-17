@@ -8,69 +8,119 @@ interface SkillCategory {
 
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: 'Web Development',
+    title: 'Front-End Development',
     icon: <i className="fa-solid fa-globe" style={{ fontSize: '20px' }}></i>,
-    skills: ['React', 'TypeScript', 'Next.js', 'HTML & CSS', 'Tailwind CSS', 'REST APIs', 'GraphQL'],
+    skills: [
+      'Responsive Design',
+      'State Management',
+      'Accessibility (WCAG)',
+      'Cross-Browser Compatibility',
+      'Performance Optimization',
+      'UI/UX Principles',
+    ],
     techIcons: [
+      'devicon-react-original colored',
+      'devicon-typescript-plain colored',
       'devicon-html5-plain colored',
       'devicon-css3-plain colored',
-      'devicon-react-original colored',
-      'devicon-nextjs-plain',
-      'devicon-typescript-plain colored',
       'devicon-tailwindcss-plain colored',
+      'devicon-flutter-plain colored',
     ],
   },
   {
     title: 'Back-End Development',
-    icon: <i className="fa-solid fa-server" style={{ fontSize: '20px' }}></i>,
-    skills: ['Node.js', 'Python', 'FastAPI', 'Express', 'PostgreSQL', 'MongoDB', 'Redis'],
+    icon: <i className="fa-solid fa-database" style={{ fontSize: '20px' }}></i>,
+    skills: [
+      'API Design (REST/GraphQL)',
+      'Database Schema Design',
+      'Authentication & Authorization',
+      'Error Handling & Logging',
+      'Scalability Concepts',
+      'Data Modeling',
+    ],
     techIcons: [
       'devicon-nodejs-plain colored',
-      'devicon-python-plain colored',
-      'devicon-fastapi-plain colored',
       'devicon-express-original',
-      'devicon-postgresql-plain colored',
+      'devicon-python-plain colored',
+      'devicon-flask-plain',
+      'devicon-mongoose-original colored',
+      'devicon-sqlalchemy-plain',
     ],
   },
   {
     title: 'DevOps & Cloud',
     icon: <i className="fa-solid fa-cloud" style={{ fontSize: '20px' }}></i>,
-    skills: ['Docker', 'CI/CD Pipelines', 'GitHub Actions', 'AWS', 'Cloudflare', 'Linux Server Admin', 'Nginx'],
+    skills: [
+      'CI/CD Pipelines',
+      'Infrastructure as Code',
+      'Monitoring & Observability',
+      'Container Orchestration',
+      'Cloud Cost Optimization',
+      'Reverse Proxy Management',
+    ],
     techIcons: [
       'devicon-docker-plain colored',
-      'devicon-githubactions-plain colored',
-      'devicon-linux-plain',
-      'devicon-bash-plain',
+      'devicon-jenkins-plain colored',
+      'devicon-github-plain colored',
+      'devicon-digitalocean-original colored',
+      'devicon-k3os-original colored',
+      'devicon-kubernetes-plain colored',
+      'devicon-cloudflare-plain colored',
       'devicon-nginx-original colored',
     ],
   },
   {
     title: 'Automation & Scripting',
     icon: <i className="fa-solid fa-terminal" style={{ fontSize: '20px' }}></i>,
-    skills: ['Bash Scripting', 'Python Automation', 'Cron Jobs', 'Ansible', 'Web Scraping', 'Task Scheduling'],
+    skills: [
+      'Task Automation',
+      'Workflow Orchestration',
+      'Data Parsing & Transformation',
+      'Error Recovery Logic',
+      'Configuration Management',
+    ],
     techIcons: [
       'devicon-bash-plain',
       'devicon-python-plain colored',
-      'devicon-ansible-plain colored',
-      'devicon-selenium-original colored',
-      'devicon-nodejs-plain', // n8n placeholder
+      'devicon-ansible-plain',
+      'devicon-vagrant-plain colored',
     ],
   },
   {
     title: 'SysAdmin',
-    icon: <i className="fa-solid fa-gear" style={{ fontSize: '20px' }}></i>,
-    skills: ['Linux (Debian/Ubuntu)', 'Windows Server', 'Active Directory', 'Networking', 'Firewalls', 'Backups & Recovery'],
-    techIcons: ['devicon-linux-plain'],
+    icon: <i className="fa-solid fa-server" style={{ fontSize: '20px' }}></i>,
+    skills: [
+      'User & Permission Management',
+      'Network Troubleshooting',
+      'Backup & Disaster Recovery',
+      'Log Analysis',
+      'Security Hardening',
+      'Virtualization Management',
+    ],
+    techIcons: [
+      'devicon-prometheus-original colored',
+      'devicon-proxmox-plain-wordmark',
+      'devicon-debian-plain colored',
+      'devicon-ubuntu-plain',
+      'devicon-opensuse-original colored',
+    ],
   },
   {
-    title: 'AI Integrations',
+    title: 'Artificial Intelligence',
     icon: <i className="fa-solid fa-robot" style={{ fontSize: '20px' }}></i>,
-    skills: ['OpenAI API', 'LangChain', 'RAG Pipelines', 'Vector Databases', 'Prompt Engineering', 'AI Workflow Automation'],
+    skills: [
+      'Data Preprocessing',
+      'Model Training & Evaluation',
+      'Hyperparameter Tuning',
+      'RAG Pipelines',
+      'Vector Database Integration',
+      'Ethical AI Practices',
+    ],
     techIcons: [
-      'devicon-python-plain colored',
-      'devicon-nodejs-plain colored',
-      'devicon-postgresql-plain colored',
-      'devicon-nodejs-plain', // n8n placeholder
+      'devicon-firebase-plain colored',
+      'devicon-dart-plain colored',
+      'devicon-google-plain colored',
+      'devicon-sqlite-plain colored',
     ],
   },
 ];
@@ -96,7 +146,7 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((cat) => (
             <div
               key={cat.title}
-              className="group flex flex-col bg-[#f8fafc] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-6 hover:border-[#1d6bf3] transition-all duration-300"
+              className="group flex flex-col bg-[#f1f5f9] dark:bg-[#0d1f3c] border border-slate-100 dark:border-slate-800 rounded-2xl p-6 hover:border-[#1d6bf3] transition-all duration-300"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3.5 mb-5">
@@ -109,7 +159,7 @@ export default function Skills() {
               </div>
 
               {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2 mb-8 flex-1">
+              <div className="flex flex-wrap items-start content-start gap-2 mb-8 flex-1">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
