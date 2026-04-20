@@ -1,10 +1,10 @@
 const NAV = [
-  { label: 'Home',       href: '#home' },
-  { label: 'About',      href: '#about' },
-  { label: 'Skills',     href: '#skills' },
-  { label: 'Projects',   href: '#projects' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Contact',    href: '#contact' },
+  { label: 'Proposals', href: '#proposals' },
 ];
 
 export default function Footer() {
@@ -57,20 +57,12 @@ export default function Footer() {
                 <i className="fa-brands fa-github" style={{ fontSize: '16px' }}></i> GitHub
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://upwork.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-sm text-slate-600 hover:text-[#1d6bf3] dark:text-slate-400 dark:hover:text-[#4f8ef7] transition-colors"
               >
-                <i className="fa-brands fa-linkedin" style={{ fontSize: '16px' }}></i> LinkedIn
-              </a>
-              <a
-                href="https://calendly.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm text-slate-600 hover:text-[#1d6bf3] dark:text-slate-400 dark:hover:text-[#4f8ef7] transition-colors"
-              >
-                <i className="fa-solid fa-calendar-days" style={{ fontSize: '16px' }}></i> Calendly
+                <i className="fa-brands fa-upwork" style={{ fontSize: '16px' }}></i> Upwork
               </a>
             </div>
           </div>

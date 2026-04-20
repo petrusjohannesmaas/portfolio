@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
+  // { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
@@ -68,7 +68,7 @@ export default function Navbar() {
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-2">
           <a
-            href="#contact"
+            href="#proposals"
             className="flex items-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-[#1558d6] transition-colors"
           >
             <i className="fa-brands fa-square-upwork" style={{ fontSize: '13px' }}></i>
@@ -143,7 +143,7 @@ export default function Navbar() {
           </ul>
           <div className="px-3">
             <a
-              href="#contact"
+              href="#proposals"
               onClick={close}
               className="flex items-center justify-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-3 py-2.5 rounded-lg active:bg-[#1558d6] transition-colors"
             >
