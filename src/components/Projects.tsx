@@ -102,8 +102,8 @@ export default function Projects() {
                     rel="noreferrer"
                     className="inline-flex items-center gap-2.5 bg-[#1d6bf3] hover:bg-[#1558d6] text-white font-bold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/20 active:scale-[0.98]"
                   >
-                    <i className="fa-solid fa-up-right-from-square" style={{ fontSize: '14px' }}></i>
-                    VIEW PROJECT
+                    <i className="fa-solid fa-up-right-from-square" style={{ fontSize: '13px' }}></i>
+                    View project
                   </a>
                 </div>
               </div>

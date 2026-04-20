@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
-  // { label: 'Home', href: '#home' },
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
@@ -42,7 +42,7 @@ export default function Navbar() {
         : 'bg-transparent'
         }`}
     >
-      <nav className="w-full px-6 lg:px-12 flex items-center justify-between h-16">
+      <nav className="w-full px-6 lg:px-12 flex items-center justify-between h-16 relative">
         {/* Brand */}
         <a
           href="#home"
@@ -52,7 +52,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
           {NAV_LINKS.map((l) => (
             <li key={l.href}>
               <a
@@ -147,8 +147,8 @@ export default function Navbar() {
               onClick={close}
               className="flex items-center justify-center gap-2 bg-[#1d6bf3] text-white text-sm font-medium px-3 py-2.5 rounded-lg active:bg-[#1558d6] transition-colors"
             >
-              <i className="fa-solid fa-upwork" style={{ fontSize: '14px' }}></i>
-              Request
+              <i className="fa-brands fa-square-upwork" style={{ fontSize: '14px' }}></i>
+              Proposals
             </a>
           </div>
         </div>

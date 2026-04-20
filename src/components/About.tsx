@@ -30,12 +30,8 @@ const CERTS = [
   }
 ];
 
-const INTERESTS = ['Formula 1', 'Linux', 'Fashion', 'World Music', 'Chess', 'Blockchain', 'Philosophy'];
+const INTERESTS = ['Formula 1', 'Linux', 'Privacy', 'Artificial Intelligence', 'Self-reliance', 'World Music', 'Chess', 'Blockchain technology', 'Philosophy'];
 
-const LANGUAGES = [
-  { lang: 'Afrikaans', level: 'Native' },
-  { lang: 'English', level: 'Fluent' },
-];
 
 export default function About() {
   return (
@@ -59,15 +55,19 @@ export default function About() {
               <div className="w-10 h-10 rounded-xl bg-[#e8f0fe] flex items-center justify-center">
                 <i className="fa-solid fa-briefcase text-[#1d6bf3]" style={{ fontSize: '20px' }}></i>
               </div>
-              <span className="font-['Montserrat'] font-bold text-lg text-[#0a1628] dark:text-white">
-                Freelance IT Specialist
-              </span>
+              <div className="flex flex-col">
+                <span className="font-['Montserrat'] font-bold text-lg text-[#0a1628] dark:text-white">
+                  Freelance IT Specialist
+                </span>
+                <span className="text-sm text-[#475569] dark:text-slate-400">
+                  🇿🇦 South Africa · GMT +2
+                </span>
+              </div>
             </div>
 
             <p className="text-[#475569] dark:text-slate-400 leading-relaxed mb-4">
-              I'm a passionate IT professional and full-stack developer based in KwaZulu-Natal, South Africa.
-              My work spans web development, Linux system administration, infrastructure, and automation - I
-              love bridging the gap between technical complexity and practical business solutions.
+              My work spans web development, Linux system administration, infrastructure, automation, and marketing/sales workflows.
+              I love bridging the gap between technical complexity and practical business solutions.
             </p>
             <p className="text-[#475569] dark:text-slate-400 leading-relaxed mb-4">
               With a background in both hands-on sysadmin work, blockchain technologies and modern software development using AI tools, I bring
@@ -97,17 +97,15 @@ export default function About() {
               </a>
             </div>
           </div>
-
           {/* Right: quick facts (2 cols) */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-
             {/* Certificates */}
-            <div className="bg-white dark:bg-[#0a1628] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+            <div className="bg-white dark:bg-[#0a1628] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 flex-1 flex flex-col">
               <div className="flex items-center gap-2 mb-4">
                 <i className="fa-solid fa-award text-[#1d6bf3]" style={{ fontSize: '18px' }}></i>
                 <h3 className="font-['Montserrat'] font-bold text-[#0a1628] dark:text-white">Certificates</h3>
               </div>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-3 flex-1 justify-center">
                 {CERTS.map((c) => (
                   <li key={c.name} className="flex items-start gap-3 group">
                     <img
@@ -137,32 +135,13 @@ export default function About() {
               </ul>
             </div>
 
-            {/* Languages */}
-            <div className="bg-white dark:bg-[#0a1628] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
-              <div className="flex items-center gap-2 mb-4">
-                <i className="fa-solid fa-globe text-[#1d6bf3]" style={{ fontSize: '18px' }}></i>
-                <h3 className="font-['Montserrat'] font-bold text-[#0a1628] dark:text-white">Languages</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {LANGUAGES.map((l) => (
-                  <span
-                    key={l.lang}
-                    className="inline-flex items-center gap-1.5 bg-[#e8f0fe] text-[#1d6bf3] text-xs font-semibold px-3 py-1.5 rounded-full"
-                  >
-                    {l.lang}
-                    <span className="text-[#94a3b8] font-normal">· {l.level}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-
             {/* Interests */}
-            <div className="bg-white dark:bg-[#0a1628] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+            <div className="bg-white dark:bg-[#0a1628] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 flex-1 flex flex-col">
               <div className="flex items-center gap-2 mb-4">
                 <i className="fa-solid fa-heart text-[#1d6bf3]" style={{ fontSize: '18px' }}></i>
                 <h3 className="font-['Montserrat'] font-bold text-[#0a1628] dark:text-white">Interests</h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 flex-1 items-start content-start">
                 {INTERESTS.map((i) => (
                   <span
                     key={i}

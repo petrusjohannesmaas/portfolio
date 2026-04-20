@@ -76,10 +76,10 @@ export default function Home() {
 
           {/* Right: Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Location badge */}
-            <div className="inline-flex items-center gap-2 bg-[#e8f0fe] text-[#1d6bf3] text-xs font-semibold px-3 py-1.5 rounded-full mb-8 fade-up">
-              <span className="w-2 h-2 rounded-full bg-[#1d6bf3] animate-pulse" />
-              KwaZulu-Natal, South Africa
+            {/* Open for work tag */}
+            <div className="inline-flex items-center gap-2 bg-[#dcfce7] text-[#16a34a] text-xs font-semibold px-3 py-1.5 rounded-full mb-6 fade-up">
+              <span className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse" />
+              Open for work
             </div>
 
             {/* Name */}
